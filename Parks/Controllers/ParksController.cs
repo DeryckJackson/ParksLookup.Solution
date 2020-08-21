@@ -48,5 +48,13 @@ namespace Parks.Controllers
       _db.Parks.Add(park);
       _db.SaveChanges();
     }
+
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Park park)
+    {
+      park.ParkId = id;
+      _db.Entry(park).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
   }
 }
