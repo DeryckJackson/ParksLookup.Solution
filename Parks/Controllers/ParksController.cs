@@ -30,13 +30,28 @@ namespace Parks.Controllers
 
     [AllowAnonymous]
     [HttpGet("search")]
-    public ActionResult<IEnumerable<Park>> Search(string name)
+    public ActionResult<IEnumerable<Park>> Search(string name, string city, string state, string zipcode)
     {
       var query = _db.Parks.AsQueryable();
 
       if (name != null)
       {
         query = query.Where(entry => entry.Name.Contains(name));
+      }
+
+      if (city != null)
+      {
+        query = query.Where(entry => entry.City.Contains(city));
+      }
+
+      if (state != null)
+      {
+        query = query.Where(entry => entry.State.Contains(state));
+      }
+
+      if (zipcode != null)
+      {
+        query = query.Where(entry => entry.Zipcode.Contains(zipcode));
       }
 
       return query.ToList();

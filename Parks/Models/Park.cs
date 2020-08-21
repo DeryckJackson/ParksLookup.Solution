@@ -18,7 +18,7 @@ namespace Parks.Models
     public string State { get; set; }
     [Required(ErrorMessage = "Zip is Required")]
     [RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Invalid Zip")]
-    public int Zipcode { get; set; }
+    public string Zipcode { get; set; }
     [StringLength(255)]
     public string Hours { get; set; }
     public bool OpenForSeason { get; set; } = false;
