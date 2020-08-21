@@ -14,7 +14,7 @@ An API for locating state and national parks by name or location.
 * As a user I want to be able to make requests for parks by location
 * As a user I want to be able to see whether parks I have requested are open for the season
 * As a user I want to be able to see the parks open hours
-* As a user I want to be able to see whether parks I have requested have camping available
+* As a user I want to be able to see whether parks I have requested has camping available
 * As a user I want to be able to know whether the park has a visitor center
 * As a user I want to be able to know where the park is located
 

@@ -30,7 +30,7 @@ namespace Parks.Controllers
 
     [AllowAnonymous]
     [HttpGet("search")]
-    public ActionResult<IEnumerable<Park>> Get(string name)
+    public ActionResult<IEnumerable<Park>> Search(string name)
     {
       var query = _db.Parks.AsQueryable();
 
@@ -40,6 +40,13 @@ namespace Parks.Controllers
       }
 
       return query.ToList();
+    }
+
+    [HttpPost]
+    public void Post([FromBody] Park park)
+    {
+      _db.Parks.Add(park);
+      _db.SaveChanges();
     }
   }
 }
