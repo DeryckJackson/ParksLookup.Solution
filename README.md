@@ -1,26 +1,26 @@
-# Title
+# State and National Parks Locator
 
-#### Latest version date
+#### Latest version date 8/21/2020
 
 #### By Deryck Jackson
 
 ## Description
 
-
+An API for locating state and national parks by name or location.
 
 ## User Stories
 
-
-
-## Specifications
-
-| Spec | Input | Output |
-| :---: | :---: | :---: |
-|  |  |
+* As a user I want to be able to make a requests for parks by name
+* As a user I want to be able to make requests for parks by location
+* As a user I want to be able to see whether parks I have requested are open for the season
+* As a user I want to be able to see the parks open hours
+* As a user I want to be able to see whether parks I have requested have camping available
+* As a user I want to be able to know whether the park has a visitor center
+* As a user I want to be able to know where the park is located
 
 ## Swagger API Documentation
 
-[Swagger Docs](https://app.swaggerhub.com/apis-docs/deryck2/message-board_solution/1.0)
+[Swagger Docs]()
 
 ## Setup and Installation
 
@@ -29,24 +29,30 @@
 * For Windows users, download MySQL here: https://dev.mysql.com/downloads/file/?id=484919
 * You will need a API development tool like Postman or a way to make API requests: https://www.postman.com/downloads/
 * to clone this content, copy the url provided by the 'clone or download' button in GitHub
-* Navigate to the newly created `MessageBoard.Solution` folder
-* Navigate to the `MessageBoard` subfolder and run `dotnet restore`
+* Navigate to the newly created `ParksLookup.Solution` folder
+* Navigate to the `Parks` subfolder and run `dotnet restore`
 * Run `dotnet ef database update` in the terminal
 * Run `dotnet build` to build the app and `dotnet run` to run it
-* The web app will now be available on `http://localhost:5000/` in your browser
+* The web app will now be available on `http://localhost:5000/api/` in your browser
 * You will need to get the JWT Authentication Token, Send the following code in the RAW section of your API request body
-
+  ```
+    {
+      "User": "test"
+      "Password: "test"
+    }
+  ```
   ![Request Body](UserAuthRequest.PNG)  
 
-  ![Response Body](AuthResponseBody.PNG)
 * Copy the Token from the Value field of the Token Key from the response body of your request and attach it to the Bearer section of the header section of any requests made to API paths requiring Authentication
+
+  ![Response Body](AuthResponseBody.PNG)
 
   ![Bearer Token](BearerTokenLocation.PNG)
 
 ## Tech used
 
-* C#
-* ASP.NET MVC
+* C# / .NET Core 2.2
+* ASP.NET API
 * Entity Framework Core
 * MYSQL
 
