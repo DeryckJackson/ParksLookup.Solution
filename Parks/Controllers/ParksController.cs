@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Parks.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
 
 namespace Parks.Controllers
 {
@@ -26,6 +27,16 @@ namespace Parks.Controllers
     public ActionResult<IEnumerable<Park>> GetAll()
     {
       return _db.Parks.ToList();
+    }
+
+    [AllowAnonymous]
+    [HttpGet("{id}")]
+    public ActionResult<string> GetById(int id)
+    {
+      var thisPark = _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
+      string json = JsonSerializer.Serialize(thisPark);
+
+      return json;
     }
 
     [AllowAnonymous]
@@ -78,6 +89,20 @@ namespace Parks.Controllers
       var parkToDelete = _db.Parks.FirstOrDefault(entry => entry.ParkId == id);
       _db.Parks.Remove(parkToDelete);
       _db.SaveChanges();
+    }
+
+    [AllowAnonymous]
+    [HttpGet("random")]
+    public ActionResult<string> Random()
+    {
+      int max = _db.Parks.OrderByDescending(entry => entry.ParkId).FirstOrDefault().ParkId;
+      Random rnd = new Random();
+      int randId = rnd.Next(0, max);
+
+      var randomPark = _db.Parks.FirstOrDefault(park => park.ParkId == randId);
+      string json = JsonSerializer.Serialize(randomPark);
+
+      return json;
     }
   }
 }

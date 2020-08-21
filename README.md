@@ -20,7 +20,7 @@ An API for locating state and national parks by name or location.
 
 ## Swagger API Documentation
 
-[Swagger Docs]()
+[Swagger Docs](https://app.swaggerhub.com/apis-docs/deryck2/ParksLocator/1.0)
 
 ## Setup and Installation
 
@@ -55,6 +55,10 @@ An API for locating state and national parks by name or location.
 * ASP.NET API
 * Entity Framework Core
 * MYSQL
+* CORS
+
+  Note: This app uses CORS which allows requests to be made from different domain origins. If you are planning on expanding on this project please note this makes it less secure than a normal API without CORS implemented. For further info please follow the link below.  
+  [CORS Info](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 ### License
 
