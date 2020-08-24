@@ -18,9 +18,11 @@ An API for locating state and national parks by name or location.
 * As a user I want to be able to know whether the park has a visitor center
 * As a user I want to be able to know where the park is located
 
-## Swagger API Documentation
+## API Documentation
 
-[Swagger Docs](https://app.swaggerhub.com/apis-docs/deryck2/ParksLocator/1.0)
+To explore all the endpoints and request formats for this API please refer to the following documentation.
+
+[Documentation](https://app.swaggerhub.com/apis-docs/deryck2/ParksLocator/1.0)
 
 ## Setup and Installation
 
