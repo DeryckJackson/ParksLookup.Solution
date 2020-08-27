@@ -39,8 +39,8 @@ To explore all the endpoints and request formats for this API please refer to th
 * You will need to get the JWT Authentication Token, Send the following code in the RAW section of your API request body
   ```
     {
-      "User": "test"
-      "Password: "test"
+      "User": "test",
+      "Password": "test"
     }
   ```
   ![Request Body](UserAuthRequest.PNG)  
